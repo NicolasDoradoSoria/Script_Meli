@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Buscador from "./components/Buscador";
+import Items from "./components/Items";
+import React, { useState } from "react";
 function App() {
+  
+  // en este hooks se guarda los items
+  const [items, setItems] = useState([]);
+  //destroyoning
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* se pasa los hooks a sus repectivos componentes */}
+      <Buscador setItems={setItems}/>
+
+
+        <Items items={items} />
+     
+    </>
   );
 }
 
